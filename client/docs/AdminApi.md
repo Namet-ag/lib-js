@@ -1,14 +1,14 @@
 # AdminApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.namet.ag*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**adminControllerIdentify**](#admincontrolleridentify) | **GET** /admin/identify | |
-|[**adminControllerLogin**](#admincontrollerlogin) | **POST** /admin/login | |
+|[**identifyAdmin**](#identifyadmin) | **GET** /admin/identify | |
+|[**loginAdmin**](#loginadmin) | **POST** /admin/login | |
 
-# **adminControllerIdentify**
-> AdminIdentifyResponse adminControllerIdentify()
+# **identifyAdmin**
+> AdminIdentifyResponse identifyAdmin()
 
 
 ### Example
@@ -22,7 +22,7 @@ import {
 const configuration = new Configuration();
 const apiInstance = new AdminApi(configuration);
 
-const { status, data } = await apiInstance.adminControllerIdentify();
+const { status, data } = await apiInstance.identifyAdmin();
 ```
 
 ### Parameters
@@ -51,8 +51,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **adminControllerLogin**
-> AdminLoginResponse adminControllerLogin(adminLoginDto)
+# **loginAdmin**
+> AdminLoginResponse loginAdmin(adminLoginDto)
 
 
 ### Example
@@ -69,7 +69,7 @@ const apiInstance = new AdminApi(configuration);
 
 let adminLoginDto: AdminLoginDto; //
 
-const { status, data } = await apiInstance.adminControllerLogin(
+const { status, data } = await apiInstance.loginAdmin(
     adminLoginDto
 );
 ```

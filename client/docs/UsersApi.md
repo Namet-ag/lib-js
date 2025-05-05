@@ -1,15 +1,15 @@
 # UsersApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.namet.ag*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**usersControllerFind**](#userscontrollerfind) | **GET** /users/{id} | |
-|[**usersControllerFindCapes**](#userscontrollerfindcapes) | **GET** /users/{id}/capes | |
-|[**usersControllerUpdateUserCapes**](#userscontrollerupdateusercapes) | **GET** /users/{id}/capes/update | |
+|[**getUser**](#getuser) | **GET** /users/{id} | |
+|[**getUserCapes**](#getusercapes) | **GET** /users/{id}/capes | |
+|[**updateUserCapes**](#updateusercapes) | **GET** /users/{id}/capes/update | |
 
-# **usersControllerFind**
-> Profile usersControllerFind()
+# **getUser**
+> Profile getUser()
 
 
 ### Example
@@ -25,7 +25,7 @@ const apiInstance = new UsersApi(configuration);
 
 let id: string; // (default to undefined)
 
-const { status, data } = await apiInstance.usersControllerFind(
+const { status, data } = await apiInstance.getUser(
     id
 );
 ```
@@ -62,8 +62,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **usersControllerFindCapes**
-> UsersFindCapesResponse usersControllerFindCapes()
+# **getUserCapes**
+> UsersFindCapesResponse getUserCapes()
 
 
 ### Example
@@ -79,7 +79,7 @@ const apiInstance = new UsersApi(configuration);
 
 let id: string; // (default to undefined)
 
-const { status, data } = await apiInstance.usersControllerFindCapes(
+const { status, data } = await apiInstance.getUserCapes(
     id
 );
 ```
@@ -115,8 +115,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **usersControllerUpdateUserCapes**
-> usersControllerUpdateUserCapes()
+# **updateUserCapes**
+> updateUserCapes()
 
 
 ### Example
@@ -132,7 +132,7 @@ const apiInstance = new UsersApi(configuration);
 
 let id: string; // (default to undefined)
 
-const { status, data } = await apiInstance.usersControllerUpdateUserCapes(
+const { status, data } = await apiInstance.updateUserCapes(
     id
 );
 ```
