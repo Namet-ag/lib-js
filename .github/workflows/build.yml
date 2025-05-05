@@ -23,7 +23,8 @@ jobs:
           git config --global user.name "Namet.ag"
           git config --global user.email "nametag@eyezah.com"
           cd openapi
-          git pull
+          git fetch origin
+          git reset --hard origin/main
           cd ..
 
       - name: Install Node and NPM
