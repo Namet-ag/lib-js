@@ -18,6 +18,14 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           submodules: true
 
+      - name: Update OpenAPI spec
+        run: |
+          git config --global user.name "Namet.ag"
+          git config --global user.email "nametag@eyezah.com"
+          cd openapi
+          git pull
+          cd ..
+
       - name: Install Node and NPM
         uses: actions/setup-node@v3
         with:
@@ -34,8 +42,7 @@ jobs:
       
       - name: Push changes
         run: |
-          git config --global user.name "Namet.ag"
-          git config --global user.email "nametag@eyezah.com"
+          pwd
           git add .
           git commit -m "Update library"
           git push

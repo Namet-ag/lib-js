@@ -1,6 +1,7 @@
 const FS = require("fs");
 
 FS.copyFileSync(".npmignore", "client/.npmignore");
+FS.copyFileSync("README.md", "client/README.md");
 
 const packageJson = JSON.parse(FS.readFileSync("client/package.json", "utf-8"));
 
