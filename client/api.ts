@@ -436,9 +436,9 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerCreate: async (createAccountDto: CreateAccountDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createAccount: async (createAccountDto: CreateAccountDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'createAccountDto' is not null or undefined
-            assertParamExists('accountsControllerCreate', 'createAccountDto', createAccountDto)
+            assertParamExists('createAccount', 'createAccountDto', createAccountDto)
             const localVarPath = `/accounts`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -471,9 +471,9 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteAccount: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('accountsControllerDelete', 'id', id)
+            assertParamExists('deleteAccount', 'id', id)
             const localVarPath = `/accounts/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -500,42 +500,13 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        accountsControllerFindAll: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/accounts`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @param {string} id 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerGenerateJwt: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        generateAccountJwt: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('accountsControllerGenerateJwt', 'id', id)
+            assertParamExists('generateAccountJwt', 'id', id)
             const localVarPath = `/accounts/{id}/jwt`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -565,7 +536,36 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerIdentify: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getAllAccounts: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/accounts`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        identifyAccount: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/accounts/identify`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -595,9 +595,9 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerResetJwtKey: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        resetAccountJwtKey: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('accountsControllerResetJwtKey', 'id', id)
+            assertParamExists('resetAccountJwtKey', 'id', id)
             const localVarPath = `/accounts/{id}/jwt`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -629,11 +629,11 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerUpdate: async (id: string, updateAccountDto: UpdateAccountDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateAccount: async (id: string, updateAccountDto: UpdateAccountDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('accountsControllerUpdate', 'id', id)
+            assertParamExists('updateAccount', 'id', id)
             // verify required parameter 'updateAccountDto' is not null or undefined
-            assertParamExists('accountsControllerUpdate', 'updateAccountDto', updateAccountDto)
+            assertParamExists('updateAccount', 'updateAccountDto', updateAccountDto)
             const localVarPath = `/accounts/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -677,10 +677,10 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async accountsControllerCreate(createAccountDto: CreateAccountDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Account>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.accountsControllerCreate(createAccountDto, options);
+        async createAccount(createAccountDto: CreateAccountDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Account>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createAccount(createAccountDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AccountsApi.accountsControllerCreate']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['AccountsApi.createAccount']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -689,21 +689,10 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async accountsControllerDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.accountsControllerDelete(id, options);
+        async deleteAccount(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAccount(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AccountsApi.accountsControllerDelete']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async accountsControllerFindAll(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Account>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.accountsControllerFindAll(options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AccountsApi.accountsControllerFindAll']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['AccountsApi.deleteAccount']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -712,10 +701,10 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async accountsControllerGenerateJwt(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountGenerateJwtResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.accountsControllerGenerateJwt(id, options);
+        async generateAccountJwt(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountGenerateJwtResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.generateAccountJwt(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AccountsApi.accountsControllerGenerateJwt']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['AccountsApi.generateAccountJwt']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -723,10 +712,21 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async accountsControllerIdentify(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Account>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.accountsControllerIdentify(options);
+        async getAllAccounts(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Account>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllAccounts(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AccountsApi.accountsControllerIdentify']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['AccountsApi.getAllAccounts']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async identifyAccount(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Account>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.identifyAccount(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AccountsApi.identifyAccount']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -735,10 +735,10 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async accountsControllerResetJwtKey(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Account>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.accountsControllerResetJwtKey(id, options);
+        async resetAccountJwtKey(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Account>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.resetAccountJwtKey(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AccountsApi.accountsControllerResetJwtKey']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['AccountsApi.resetAccountJwtKey']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -748,10 +748,10 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async accountsControllerUpdate(id: string, updateAccountDto: UpdateAccountDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Account>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.accountsControllerUpdate(id, updateAccountDto, options);
+        async updateAccount(id: string, updateAccountDto: UpdateAccountDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Account>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateAccount(id, updateAccountDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AccountsApi.accountsControllerUpdate']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['AccountsApi.updateAccount']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -770,8 +770,8 @@ export const AccountsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerCreate(createAccountDto: CreateAccountDto, options?: RawAxiosRequestConfig): AxiosPromise<Account> {
-            return localVarFp.accountsControllerCreate(createAccountDto, options).then((request) => request(axios, basePath));
+        createAccount(createAccountDto: CreateAccountDto, options?: RawAxiosRequestConfig): AxiosPromise<Account> {
+            return localVarFp.createAccount(createAccountDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -779,16 +779,8 @@ export const AccountsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerDelete(id: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
-            return localVarFp.accountsControllerDelete(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        accountsControllerFindAll(options?: RawAxiosRequestConfig): AxiosPromise<Array<Account>> {
-            return localVarFp.accountsControllerFindAll(options).then((request) => request(axios, basePath));
+        deleteAccount(id: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.deleteAccount(id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -796,16 +788,24 @@ export const AccountsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerGenerateJwt(id: string, options?: RawAxiosRequestConfig): AxiosPromise<AccountGenerateJwtResponse> {
-            return localVarFp.accountsControllerGenerateJwt(id, options).then((request) => request(axios, basePath));
+        generateAccountJwt(id: string, options?: RawAxiosRequestConfig): AxiosPromise<AccountGenerateJwtResponse> {
+            return localVarFp.generateAccountJwt(id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerIdentify(options?: RawAxiosRequestConfig): AxiosPromise<Account> {
-            return localVarFp.accountsControllerIdentify(options).then((request) => request(axios, basePath));
+        getAllAccounts(options?: RawAxiosRequestConfig): AxiosPromise<Array<Account>> {
+            return localVarFp.getAllAccounts(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        identifyAccount(options?: RawAxiosRequestConfig): AxiosPromise<Account> {
+            return localVarFp.identifyAccount(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -813,8 +813,8 @@ export const AccountsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerResetJwtKey(id: string, options?: RawAxiosRequestConfig): AxiosPromise<Account> {
-            return localVarFp.accountsControllerResetJwtKey(id, options).then((request) => request(axios, basePath));
+        resetAccountJwtKey(id: string, options?: RawAxiosRequestConfig): AxiosPromise<Account> {
+            return localVarFp.resetAccountJwtKey(id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -823,8 +823,8 @@ export const AccountsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        accountsControllerUpdate(id: string, updateAccountDto: UpdateAccountDto, options?: RawAxiosRequestConfig): AxiosPromise<Account> {
-            return localVarFp.accountsControllerUpdate(id, updateAccountDto, options).then((request) => request(axios, basePath));
+        updateAccount(id: string, updateAccountDto: UpdateAccountDto, options?: RawAxiosRequestConfig): AxiosPromise<Account> {
+            return localVarFp.updateAccount(id, updateAccountDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -843,8 +843,8 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public accountsControllerCreate(createAccountDto: CreateAccountDto, options?: RawAxiosRequestConfig) {
-        return AccountsApiFp(this.configuration).accountsControllerCreate(createAccountDto, options).then((request) => request(this.axios, this.basePath));
+    public createAccount(createAccountDto: CreateAccountDto, options?: RawAxiosRequestConfig) {
+        return AccountsApiFp(this.configuration).createAccount(createAccountDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -854,18 +854,8 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public accountsControllerDelete(id: string, options?: RawAxiosRequestConfig) {
-        return AccountsApiFp(this.configuration).accountsControllerDelete(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AccountsApi
-     */
-    public accountsControllerFindAll(options?: RawAxiosRequestConfig) {
-        return AccountsApiFp(this.configuration).accountsControllerFindAll(options).then((request) => request(this.axios, this.basePath));
+    public deleteAccount(id: string, options?: RawAxiosRequestConfig) {
+        return AccountsApiFp(this.configuration).deleteAccount(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -875,8 +865,8 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public accountsControllerGenerateJwt(id: string, options?: RawAxiosRequestConfig) {
-        return AccountsApiFp(this.configuration).accountsControllerGenerateJwt(id, options).then((request) => request(this.axios, this.basePath));
+    public generateAccountJwt(id: string, options?: RawAxiosRequestConfig) {
+        return AccountsApiFp(this.configuration).generateAccountJwt(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -885,8 +875,18 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public accountsControllerIdentify(options?: RawAxiosRequestConfig) {
-        return AccountsApiFp(this.configuration).accountsControllerIdentify(options).then((request) => request(this.axios, this.basePath));
+    public getAllAccounts(options?: RawAxiosRequestConfig) {
+        return AccountsApiFp(this.configuration).getAllAccounts(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AccountsApi
+     */
+    public identifyAccount(options?: RawAxiosRequestConfig) {
+        return AccountsApiFp(this.configuration).identifyAccount(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -896,8 +896,8 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public accountsControllerResetJwtKey(id: string, options?: RawAxiosRequestConfig) {
-        return AccountsApiFp(this.configuration).accountsControllerResetJwtKey(id, options).then((request) => request(this.axios, this.basePath));
+    public resetAccountJwtKey(id: string, options?: RawAxiosRequestConfig) {
+        return AccountsApiFp(this.configuration).resetAccountJwtKey(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -908,8 +908,8 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public accountsControllerUpdate(id: string, updateAccountDto: UpdateAccountDto, options?: RawAxiosRequestConfig) {
-        return AccountsApiFp(this.configuration).accountsControllerUpdate(id, updateAccountDto, options).then((request) => request(this.axios, this.basePath));
+    public updateAccount(id: string, updateAccountDto: UpdateAccountDto, options?: RawAxiosRequestConfig) {
+        return AccountsApiFp(this.configuration).updateAccount(id, updateAccountDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -926,7 +926,7 @@ export const AdminApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        adminControllerIdentify: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        identifyAdmin: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/admin/identify`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -956,9 +956,9 @@ export const AdminApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        adminControllerLogin: async (adminLoginDto: AdminLoginDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        loginAdmin: async (adminLoginDto: AdminLoginDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'adminLoginDto' is not null or undefined
-            assertParamExists('adminControllerLogin', 'adminLoginDto', adminLoginDto)
+            assertParamExists('loginAdmin', 'adminLoginDto', adminLoginDto)
             const localVarPath = `/admin/login`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1000,10 +1000,10 @@ export const AdminApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async adminControllerIdentify(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AdminIdentifyResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.adminControllerIdentify(options);
+        async identifyAdmin(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AdminIdentifyResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.identifyAdmin(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminApi.adminControllerIdentify']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['AdminApi.identifyAdmin']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1012,10 +1012,10 @@ export const AdminApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async adminControllerLogin(adminLoginDto: AdminLoginDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AdminLoginResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.adminControllerLogin(adminLoginDto, options);
+        async loginAdmin(adminLoginDto: AdminLoginDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AdminLoginResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.loginAdmin(adminLoginDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['AdminApi.adminControllerLogin']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['AdminApi.loginAdmin']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -1033,8 +1033,8 @@ export const AdminApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        adminControllerIdentify(options?: RawAxiosRequestConfig): AxiosPromise<AdminIdentifyResponse> {
-            return localVarFp.adminControllerIdentify(options).then((request) => request(axios, basePath));
+        identifyAdmin(options?: RawAxiosRequestConfig): AxiosPromise<AdminIdentifyResponse> {
+            return localVarFp.identifyAdmin(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1042,8 +1042,8 @@ export const AdminApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        adminControllerLogin(adminLoginDto: AdminLoginDto, options?: RawAxiosRequestConfig): AxiosPromise<AdminLoginResponse> {
-            return localVarFp.adminControllerLogin(adminLoginDto, options).then((request) => request(axios, basePath));
+        loginAdmin(adminLoginDto: AdminLoginDto, options?: RawAxiosRequestConfig): AxiosPromise<AdminLoginResponse> {
+            return localVarFp.loginAdmin(adminLoginDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1061,8 +1061,8 @@ export class AdminApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AdminApi
      */
-    public adminControllerIdentify(options?: RawAxiosRequestConfig) {
-        return AdminApiFp(this.configuration).adminControllerIdentify(options).then((request) => request(this.axios, this.basePath));
+    public identifyAdmin(options?: RawAxiosRequestConfig) {
+        return AdminApiFp(this.configuration).identifyAdmin(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1072,8 +1072,8 @@ export class AdminApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AdminApi
      */
-    public adminControllerLogin(adminLoginDto: AdminLoginDto, options?: RawAxiosRequestConfig) {
-        return AdminApiFp(this.configuration).adminControllerLogin(adminLoginDto, options).then((request) => request(this.axios, this.basePath));
+    public loginAdmin(adminLoginDto: AdminLoginDto, options?: RawAxiosRequestConfig) {
+        return AdminApiFp(this.configuration).loginAdmin(adminLoginDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -1091,9 +1091,9 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        profilesControllerSubmit: async (submitProfileDto: SubmitProfileDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        submitProfile: async (submitProfileDto: SubmitProfileDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'submitProfileDto' is not null or undefined
-            assertParamExists('profilesControllerSubmit', 'submitProfileDto', submitProfileDto)
+            assertParamExists('submitProfile', 'submitProfileDto', submitProfileDto)
             const localVarPath = `/profiles`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1120,39 +1120,6 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        profilesControllerTempGetProfile: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('profilesControllerTempGetProfile', 'id', id)
-            const localVarPath = `/profiles/user/{id}`
-                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -1169,22 +1136,10 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async profilesControllerSubmit(submitProfileDto: SubmitProfileDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Profile>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.profilesControllerSubmit(submitProfileDto, options);
+        async submitProfile(submitProfileDto: SubmitProfileDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Profile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.submitProfile(submitProfileDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ProfilesApi.profilesControllerSubmit']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async profilesControllerTempGetProfile(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.profilesControllerTempGetProfile(id, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ProfilesApi.profilesControllerTempGetProfile']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ProfilesApi.submitProfile']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -1203,17 +1158,8 @@ export const ProfilesApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        profilesControllerSubmit(submitProfileDto: SubmitProfileDto, options?: RawAxiosRequestConfig): AxiosPromise<Profile> {
-            return localVarFp.profilesControllerSubmit(submitProfileDto, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        profilesControllerTempGetProfile(id: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
-            return localVarFp.profilesControllerTempGetProfile(id, options).then((request) => request(axios, basePath));
+        submitProfile(submitProfileDto: SubmitProfileDto, options?: RawAxiosRequestConfig): AxiosPromise<Profile> {
+            return localVarFp.submitProfile(submitProfileDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1232,19 +1178,8 @@ export class ProfilesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public profilesControllerSubmit(submitProfileDto: SubmitProfileDto, options?: RawAxiosRequestConfig) {
-        return ProfilesApiFp(this.configuration).profilesControllerSubmit(submitProfileDto, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {string} id 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProfilesApi
-     */
-    public profilesControllerTempGetProfile(id: string, options?: RawAxiosRequestConfig) {
-        return ProfilesApiFp(this.configuration).profilesControllerTempGetProfile(id, options).then((request) => request(this.axios, this.basePath));
+    public submitProfile(submitProfileDto: SubmitProfileDto, options?: RawAxiosRequestConfig) {
+        return ProfilesApiFp(this.configuration).submitProfile(submitProfileDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -1262,9 +1197,9 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersControllerFind: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getUser: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('usersControllerFind', 'id', id)
+            assertParamExists('getUser', 'id', id)
             const localVarPath = `/users/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1295,9 +1230,9 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersControllerFindCapes: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getUserCapes: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('usersControllerFindCapes', 'id', id)
+            assertParamExists('getUserCapes', 'id', id)
             const localVarPath = `/users/{id}/capes`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1328,9 +1263,9 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersControllerUpdateUserCapes: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateUserCapes: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('usersControllerUpdateUserCapes', 'id', id)
+            assertParamExists('updateUserCapes', 'id', id)
             const localVarPath = `/users/{id}/capes/update`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1371,10 +1306,10 @@ export const UsersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usersControllerFind(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Profile>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.usersControllerFind(id, options);
+        async getUser(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Profile>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getUser(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UsersApi.usersControllerFind']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UsersApi.getUser']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1383,10 +1318,10 @@ export const UsersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usersControllerFindCapes(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsersFindCapesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.usersControllerFindCapes(id, options);
+        async getUserCapes(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsersFindCapesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getUserCapes(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UsersApi.usersControllerFindCapes']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UsersApi.getUserCapes']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1395,10 +1330,10 @@ export const UsersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usersControllerUpdateUserCapes(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.usersControllerUpdateUserCapes(id, options);
+        async updateUserCapes(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateUserCapes(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['UsersApi.usersControllerUpdateUserCapes']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['UsersApi.updateUserCapes']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -1417,8 +1352,8 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersControllerFind(id: string, options?: RawAxiosRequestConfig): AxiosPromise<Profile> {
-            return localVarFp.usersControllerFind(id, options).then((request) => request(axios, basePath));
+        getUser(id: string, options?: RawAxiosRequestConfig): AxiosPromise<Profile> {
+            return localVarFp.getUser(id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1426,8 +1361,8 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersControllerFindCapes(id: string, options?: RawAxiosRequestConfig): AxiosPromise<UsersFindCapesResponse> {
-            return localVarFp.usersControllerFindCapes(id, options).then((request) => request(axios, basePath));
+        getUserCapes(id: string, options?: RawAxiosRequestConfig): AxiosPromise<UsersFindCapesResponse> {
+            return localVarFp.getUserCapes(id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1435,8 +1370,8 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersControllerUpdateUserCapes(id: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
-            return localVarFp.usersControllerUpdateUserCapes(id, options).then((request) => request(axios, basePath));
+        updateUserCapes(id: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.updateUserCapes(id, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1455,8 +1390,8 @@ export class UsersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    public usersControllerFind(id: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).usersControllerFind(id, options).then((request) => request(this.axios, this.basePath));
+    public getUser(id: string, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).getUser(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1466,8 +1401,8 @@ export class UsersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    public usersControllerFindCapes(id: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).usersControllerFindCapes(id, options).then((request) => request(this.axios, this.basePath));
+    public getUserCapes(id: string, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).getUserCapes(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1477,8 +1412,8 @@ export class UsersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UsersApi
      */
-    public usersControllerUpdateUserCapes(id: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).usersControllerUpdateUserCapes(id, options).then((request) => request(this.axios, this.basePath));
+    public updateUserCapes(id: string, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).updateUserCapes(id, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -1,19 +1,19 @@
 # AccountsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.namet.ag*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**accountsControllerCreate**](#accountscontrollercreate) | **PUT** /accounts | |
-|[**accountsControllerDelete**](#accountscontrollerdelete) | **DELETE** /accounts/{id} | |
-|[**accountsControllerFindAll**](#accountscontrollerfindall) | **GET** /accounts | |
-|[**accountsControllerGenerateJwt**](#accountscontrollergeneratejwt) | **GET** /accounts/{id}/jwt | |
-|[**accountsControllerIdentify**](#accountscontrolleridentify) | **GET** /accounts/identify | |
-|[**accountsControllerResetJwtKey**](#accountscontrollerresetjwtkey) | **PATCH** /accounts/{id}/jwt | |
-|[**accountsControllerUpdate**](#accountscontrollerupdate) | **PATCH** /accounts/{id} | |
+|[**createAccount**](#createaccount) | **PUT** /accounts | |
+|[**deleteAccount**](#deleteaccount) | **DELETE** /accounts/{id} | |
+|[**generateAccountJwt**](#generateaccountjwt) | **GET** /accounts/{id}/jwt | |
+|[**getAllAccounts**](#getallaccounts) | **GET** /accounts | |
+|[**identifyAccount**](#identifyaccount) | **GET** /accounts/identify | |
+|[**resetAccountJwtKey**](#resetaccountjwtkey) | **PATCH** /accounts/{id}/jwt | |
+|[**updateAccount**](#updateaccount) | **PATCH** /accounts/{id} | |
 
-# **accountsControllerCreate**
-> Account accountsControllerCreate(createAccountDto)
+# **createAccount**
+> Account createAccount(createAccountDto)
 
 
 ### Example
@@ -30,7 +30,7 @@ const apiInstance = new AccountsApi(configuration);
 
 let createAccountDto: CreateAccountDto; //
 
-const { status, data } = await apiInstance.accountsControllerCreate(
+const { status, data } = await apiInstance.createAccount(
     createAccountDto
 );
 ```
@@ -64,8 +64,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **accountsControllerDelete**
-> accountsControllerDelete()
+# **deleteAccount**
+> deleteAccount()
 
 
 ### Example
@@ -81,7 +81,7 @@ const apiInstance = new AccountsApi(configuration);
 
 let id: string; // (default to undefined)
 
-const { status, data } = await apiInstance.accountsControllerDelete(
+const { status, data } = await apiInstance.deleteAccount(
     id
 );
 ```
@@ -115,52 +115,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **accountsControllerFindAll**
-> Array<Account> accountsControllerFindAll()
-
-
-### Example
-
-```typescript
-import {
-    AccountsApi,
-    Configuration
-} from 'namet.ag';
-
-const configuration = new Configuration();
-const apiInstance = new AccountsApi(configuration);
-
-const { status, data } = await apiInstance.accountsControllerFindAll();
-```
-
-### Parameters
-This endpoint does not have any parameters.
-
-
-### Return type
-
-**Array<Account>**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** |  |  -  |
-|**401** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **accountsControllerGenerateJwt**
-> AccountGenerateJwtResponse accountsControllerGenerateJwt()
+# **generateAccountJwt**
+> AccountGenerateJwtResponse generateAccountJwt()
 
 
 ### Example
@@ -176,7 +132,7 @@ const apiInstance = new AccountsApi(configuration);
 
 let id: string; // (default to undefined)
 
-const { status, data } = await apiInstance.accountsControllerGenerateJwt(
+const { status, data } = await apiInstance.generateAccountJwt(
     id
 );
 ```
@@ -209,8 +165,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **accountsControllerIdentify**
-> Account accountsControllerIdentify()
+# **getAllAccounts**
+> Array<Account> getAllAccounts()
 
 
 ### Example
@@ -224,7 +180,51 @@ import {
 const configuration = new Configuration();
 const apiInstance = new AccountsApi(configuration);
 
-const { status, data } = await apiInstance.accountsControllerIdentify();
+const { status, data } = await apiInstance.getAllAccounts();
+```
+
+### Parameters
+This endpoint does not have any parameters.
+
+
+### Return type
+
+**Array<Account>**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** |  |  -  |
+|**401** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **identifyAccount**
+> Account identifyAccount()
+
+
+### Example
+
+```typescript
+import {
+    AccountsApi,
+    Configuration
+} from 'namet.ag';
+
+const configuration = new Configuration();
+const apiInstance = new AccountsApi(configuration);
+
+const { status, data } = await apiInstance.identifyAccount();
 ```
 
 ### Parameters
@@ -253,8 +253,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **accountsControllerResetJwtKey**
-> Account accountsControllerResetJwtKey()
+# **resetAccountJwtKey**
+> Account resetAccountJwtKey()
 
 
 ### Example
@@ -270,7 +270,7 @@ const apiInstance = new AccountsApi(configuration);
 
 let id: string; // (default to undefined)
 
-const { status, data } = await apiInstance.accountsControllerResetJwtKey(
+const { status, data } = await apiInstance.resetAccountJwtKey(
     id
 );
 ```
@@ -303,8 +303,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **accountsControllerUpdate**
-> Account accountsControllerUpdate(updateAccountDto)
+# **updateAccount**
+> Account updateAccount(updateAccountDto)
 
 
 ### Example
@@ -322,7 +322,7 @@ const apiInstance = new AccountsApi(configuration);
 let id: string; // (default to undefined)
 let updateAccountDto: UpdateAccountDto; //
 
-const { status, data } = await apiInstance.accountsControllerUpdate(
+const { status, data } = await apiInstance.updateAccount(
     id,
     updateAccountDto
 );
