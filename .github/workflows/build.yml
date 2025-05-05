@@ -35,8 +35,8 @@ jobs:
           npm run generate
 
       - name: Publish artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: Cosmetica.js
+          name: Namet.ag JS Library
           path: ./client/namet.ag-*.tgz
           if-no-files-found: error
