@@ -1,0 +1,6 @@
+node_modules
+client/.openapi-generator-ignore
+client/git_push.sh
+*.tgz
+client/package-lock.json
+client/README.md

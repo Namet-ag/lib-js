@@ -1,0 +1,7 @@
+.github
+.openapi-generator
+.gitattributes
+.openapi-generator-ignore
+/*.ts
+git_push.sh
+tsconfig.*
