@@ -24,6 +24,7 @@ docs/SubmitProfileDto.md
 docs/UpdateAccountDto.md
 docs/UsersApi.md
 docs/UsersFindCapesResponse.md
+docs/UsersSearchResponse.md
 git_push.sh
 index.ts
 package.json
